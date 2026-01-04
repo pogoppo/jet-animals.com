@@ -17,7 +17,7 @@
 		const scrollHeight = document.body.scrollHeight - window.innerHeight;
 		const step1Threshold = scrollHeight * 0.1;
 		const step2Threshold = scrollHeight * 0.5;
-		const step3Threshold = scrollHeight * 0.95;
+		const step3Threshold = scrollHeight * 0.9;
 
 		ScrollTrigger.create({
 			trigger: 'body',
@@ -85,7 +85,7 @@
 	}
 	main {
 		width: 100%;
-		height: 200lvh;
+		height: 300lvh;
 		background-color: var(--color-bg-primary);
 	}
 	.stage {
@@ -107,11 +107,12 @@
 			grid-template-areas: 'shirokuma article';
 			grid-template-columns: 1fr max(45%, 428px);
 			aspect-ratio: 16 / 9;
-			max-width: min(calc(96vh * 16 / 9), 1280px);
+			max-width: min(calc(96svh * 16 / 9), 1280px);
 			max-height: min(calc(96vw * 9 / 16), 720px);
 			border-radius: 8px;
 		}
 		@media (max-aspect-ratio: 1) {
+			height: 100lvh;
 			grid-template-areas: 'article' 'shirokuma';
 			grid-template-rows: 1fr 50%;
 		}
@@ -139,12 +140,9 @@
 		z-index: 2;
 		width: 100%;
 		max-width: 640px;
-		padding: 2.5rem;
-		@media (max-width: 640px) {
-			padding: 1.5rem;
-		}
+		padding: 4cqmin;
 		.article-heading {
-			font-size: clamp(2rem, 11cqw, 3rem);
+			font-size: clamp(2rem, 10cqw, 3rem);
 			font-weight: 800;
 		}
 		.article-date {
@@ -167,7 +165,7 @@
 			position: relative;
 			line-height: 1.75;
 			text-align: justify;
-			font-size: clamp(1rem, 6cqw, 1.5rem);
+			font-size: clamp(1rem, 5cqmin, 1.5rem);
 			@media (min-aspect-ratio: 1) {
 				gap: 1rem;
 				margin-top: 1.5rem;
