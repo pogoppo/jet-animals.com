@@ -1,10 +1,9 @@
-import { parseMarkdownFile } from '$lib/utils/markdown';
-import { join } from 'path';
+import { parseMarkdown } from '$lib/utils/markdown';
+import articleContent from '$lib/data/articles/2026-01-01.md?raw';
 
 export const load = async () => {
   // Markdownファイルをパース
-  const articlePath = join(process.cwd(), 'src/lib/data/articles/2026-01-01.md');
-  const article = parseMarkdownFile(articlePath);
+  const article = parseMarkdown(articleContent);
 
   return {
     article: {

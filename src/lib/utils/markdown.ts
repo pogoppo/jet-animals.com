@@ -1,6 +1,5 @@
 import { marked } from 'marked';
 import matter from 'gray-matter';
-import { readFileSync } from 'fs';
 
 export interface MarkdownMetadata {
   title: string;
@@ -21,9 +20,4 @@ export function parseMarkdown(content: string): ParsedMarkdown {
     metadata: data as MarkdownMetadata,
     html
   };
-}
-
-export function parseMarkdownFile(filepath: string): ParsedMarkdown {
-  const content = readFileSync(filepath, 'utf-8');
-  return parseMarkdown(content);
 }
